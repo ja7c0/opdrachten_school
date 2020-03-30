@@ -9,4 +9,5 @@
 	} catch(PDOException $ex){
 		echo "Verbinding mislukt: $ex";
 }
+	$rc = $pdo->query('select count(*) from characters')->fetchColumn(); 
 ?>

@@ -10,6 +10,10 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<header>
+			<h1>Alle <?php echo $rc ?> characters uit de database</h1>
+		</header>
+		
 		<div id="container">
 			<div class="row justify-content-md-center">
 				<?php
@@ -19,14 +23,7 @@
 					if($stm->execute()){
 					$characters = $stm->fetchAll(PDO::FETCH_OBJ);
 						foreach ($characters as $characters){
-//							echo "<div class='col-12 box'>";
-//							echo "<h3 class='card-title'>$characters->name</h3>";
-//							echo "<img width=200px src='img/$characters->avatar'>";
-//							echo "<p><i class='fa fa-heart'></i> $characters->health</p>";
-//							echo "<p><i class='fas fa-fist-raised'></i> $characters->attack</p>";
-//							echo "<p><i class='fa fa-shield-alt'></i> $characters->defense</p>";
-//							echo "</div>";
-							echo "<a class='item' href='characters.php?name=$characters->name'>";
+							echo "<a style='background-color: $characters->color' class='item' href='characters.php?name=$characters->name'>";
 							echo "<div class='left'>";
 							echo "<img class='avatar' src='img/$characters->avatar'>";
 							echo "</div>";
@@ -46,10 +43,7 @@
 				?>
 			</div>
 		</div>
-		
-		<div id="container">
-			
-		</div>
+		<footer>&copy; Jayco de Ligt - 2020</footer>
 	</body>
 	
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

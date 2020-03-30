@@ -9,8 +9,8 @@ a{
 	transition: .25s;
 }
 
-a:hover{
-    color: purple;
+a:hover, i:hover{
+    opacity: 50%;
 }
 
 a:active {
